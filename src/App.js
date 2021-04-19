@@ -1,9 +1,10 @@
 import React from 'react';
 import Clock from './components/Clock';
 //import Folder from './components/Folder';
-import FolderFunc from './components/FolderFunc'
+import FolderFunc from './components/FolderFunc';
 import Weather from './components/Weather';
-import AutoComplete from './components/Auto';
+import AutoFunc from './components/AutoFunc';
+//import AutoComplete from './components/Auto';
 
 const names = [
   'Abba',
@@ -25,7 +26,7 @@ const folders = [
 const App = () => (
   <div>
     <FolderFunc folders={folders} />
-    <AutoComplete names={names} />
+    <AutoFunc names={names} />
     <Weather />
     <Clock />
   </div>

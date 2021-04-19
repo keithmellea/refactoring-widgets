@@ -20,14 +20,14 @@ class Weather extends React.Component {
     you would definitely save your key in an environment variable.
     To keep API keys simple during the development of your project,
     you can set an `apiKey` variable in this file for now. */
-    const apiKey = `???`
+    const apiKey = process.env.REACT_APP_WEATHER_API;
 
     const params = {
       lat: location.coords.latitude,
       lon: location.coords.longitude,
       appid: apiKey
     };
-    
+
     url += toQueryString(params);
 
     fetch(url)
@@ -38,7 +38,7 @@ class Weather extends React.Component {
   render() {
     const weather = this.state.weather;
     let content = <div className='loading'>loading weather...</div>;
-    
+
     if (weather) {
       const temp = (weather.main.temp - 273.15) * 1.8 + 32;
       content = <div>
